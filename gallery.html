@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery | Prakasho Uzumaki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: url('https://wallpapercave.com/wp/wp12440960.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 12px;
+      border-bottom: 2px solid #00bfff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      color: white;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00bfff;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00bfff;
+      margin-top: 20px;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👤 About</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="feedback.html">💬 Feedback</a>
+  </nav>
+
+  <h1>📸 Anime Gallery</h1>
+
+  <div class="gallery">
+    <img src="https://i.pinimg.com/736x/ed/91/34/ed9134ac483f6fd2f4357c4cf97cc4d3.jpg" alt="Naruto">
+    <img src="https://i.pinimg.com/originals/5e/5e/64/5e5e6485f973b82f0df2e7393a929899.jpg" alt="Luffy">
+    <img src="https://i.pinimg.com/736x/f1/c4/f4/f1c4f4dc3403ad541de4532cd83f9e57.jpg" alt="Tanjiro">
+    <img src="https://i.pinimg.com/originals/f3/1c/2a/f31c2a6f65c9aa8b3a012d7a6f9e61c1.jpg" alt="Itachi">
+  </div>
+
+</body>
+</html>
