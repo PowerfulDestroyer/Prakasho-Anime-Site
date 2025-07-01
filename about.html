@@ -59,6 +59,30 @@
     border: 3px solid #00bfff;
   }
 
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 12px;
+    border-bottom: 2px solid #00bfff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar a {
+    color: #00bfff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .navbar a:hover {
+    color: #ffffff;
+  }
+
+
   @media screen and (max-width: 600px) {
     p { font-size: 16px; }
     h1 { font-size: 22px; }
@@ -67,6 +91,13 @@
 
 </head>
 <body>
+  <nav class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👤 About</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="feedback.html">💬 Feedback</a>
+  </nav>
+
   <div class="overlay">
     <img src="https://i.pinimg.com/originals/7f/b6/43/7fb643d72dfebeb6250930c98e63089b.jpg" alt="Prakasho Avatar">
     <h1>👤 Prakasho Uzumaki</h1>
