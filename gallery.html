@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      background: url('luffy.jpeg') no-repeat center center fixed;
+      background: url('naruto.webp') no-repeat center center fixed;
       background-size: cover;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
-      color: #fff;
+      color: white;
     }
 
     .navbar {
@@ -30,46 +30,82 @@
       margin: 0 15px;
       font-weight: bold;
       font-size: 18px;
+      transition: color 0.3s ease;
     }
 
     .navbar a:hover {
-      color: white;
+      color: #ffffff;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .gallery img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #00bfff;
-      transition: transform 0.3s;
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
     .gallery img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 15px #00bfff;
     }
 
     h1 {
       text-align: center;
+      margin-top: 30px;
+      font-size: 28px;
       color: #00bfff;
-      margin-top: 20px;
     }
 
     @media screen and (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .navbar a {
+        display: block;
+        margin: 8px 0;
+        font-size: 16px;
+      }
+
       h1 {
-        font-size: 24px;
+        font-size: 22px;
+      }
+
+      .gallery {
+        padding: 20px;
+        gap: 15px;
       }
     }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
     <a href="index.html">🏠 Home</a>
     <a href="about.html">👤 About</a>
@@ -77,15 +113,15 @@
     <a href="feedback.html">💬 Feedback</a>
   </nav>
 
-  <h1>📸 Anime Gallery</h1>
+  <h1 class="fade-in">🖼️ My Anime Gallery</h1>
 
-  <div class="gallery">
-  <img src="https://wallpapercave.com/wp/wp9764019.jpg" alt="Naruto">
-  <img src="https://wallpapercave.com/wp/wp7430384.jpg" alt="Luffy">
-  <img src="https://wallpapercave.com/wp/wp9645361.jpg" alt="Tanjiro">
-  <img src="https://wallpapercave.com/wp/wp11249873.jpg" alt="Itachi">
+  <div class="gallery fade-in">
+    <img src="naruto1.webp" alt="Naruto">
+    <img src="luffy1.webp" alt="Luffy">
+    <img src="tanjiro1.webp" alt="Tanjiro">
+    <img src="zoro1.webp" alt="Zoro">
+    <img src="nezuko1.webp" alt="Nezuko">
+    <img src="kakashi1.webp" alt="Kakashi">
   </div>
-
-
 </body>
 </html>
