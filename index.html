@@ -150,6 +150,7 @@
   <div class="overlay">
 
   <h1>🌟 The World of Prakasho Uzumaki 🌍</h1>
+  <span id="typed-text" style="font-size: 20px; color: #00bfff;"></span>
   <p>I’m a ninja, pirate, and demon slayer — in training. Welcome to my world.</p>
 
   <h2>🍥 Naruto</h2>
@@ -204,9 +205,24 @@
   <p style="text-align:center; margin-top: 20px;">
     <a href="feedback.html" style="background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 8px; color: #00bfff; font-weight: bold;">💬 Leave Feedback</a>
   </p>
-
     
   </div>
   
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed("#typed-text", {
+      strings: [
+        "Welcome to the World of Prakasho Uzumaki",
+        "Anime Lover 🌸 | Ninja 🍥 | Future Full Stack Dev 💻",
+        "Naruto. One Piece. Demon Slayer. My Ninja Way 🔥"
+      ],
+      typeSpeed: 50,
+      backSpeed: 25,
+      backDelay: 1500,
+      loop: true
+    });
+  </script>
+
+
 </body>
 </html>
