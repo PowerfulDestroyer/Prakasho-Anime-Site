@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>Feedback | Prakasho Uzumaki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
   <style>
     body {
-      background: url('https://wallpapercave.com/wp/wp8732572.jpg') no-repeat center center fixed;
+      background: url('naruto.webp') no-repeat center center fixed;
       background-size: cover;
-      font-family: Arial, sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: #fff;
       margin: 0;
       padding: 0;
@@ -30,67 +31,109 @@
       margin: 0 15px;
       font-weight: bold;
       font-size: 18px;
+      transition: color 0.3s ease;
     }
 
     .navbar a:hover {
-      color: white;
+      color: #ffffff;
     }
 
-    .container {
-      max-width: 600px;
-      margin: 50px auto;
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .form-wrapper {
+      max-width: 500px;
+      margin: 60px auto;
       background-color: rgba(0, 0, 0, 0.7);
       padding: 30px;
-      border-radius: 12px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
     }
 
     h1 {
       text-align: center;
+      font-size: 26px;
       color: #00bfff;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     label {
       display: block;
-      margin-top: 10px;
+      margin-bottom: 6px;
       font-weight: bold;
+      color: #00bfff;
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
-      border-radius: 5px;
-      margin-top: 5px;
+      box-sizing: border-box;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      margin-bottom: 20px;
       font-family: inherit;
       font-size: 16px;
-      border: none;
+      background-color: rgba(255,255,255,0.1);
+      color: white;
     }
 
     button {
-      margin-top: 20px;
-      padding: 12px 20px;
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
       background-color: #00bfff;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
+      color: #000;
       font-weight: bold;
+      border: none;
+      font-size: 16px;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0,191,255,0.4);
     }
 
     button:hover {
-      background-color: #009acd;
+      background-color: #ffffff;
+      color: #00bfff;
+      box-shadow: 0 0 15px #00bfff;
     }
 
     @media screen and (max-width: 600px) {
-      .container {
-        margin: 20px;
+      .form-wrapper {
+        margin: 30px 10px;
         padding: 20px;
+      }
+
+      h1 {
+        font-size: 22px;
+      }
+
+      .navbar {
+        flex-direction: column;
+        padding: 10px;
+      }
+
+      .navbar a {
+        display: block;
+        margin: 8px 0;
+        font-size: 16px;
       }
     }
   </style>
 </head>
 <body>
-
   <nav class="navbar">
     <a href="index.html">🏠 Home</a>
     <a href="about.html">👤 About</a>
@@ -98,21 +141,17 @@
     <a href="feedback.html">💬 Feedback</a>
   </nav>
 
-  <div class="container">
-    <h1>💬 Share Your Feedback</h1>
+  <div class="form-wrapper fade-in">
+    <h1>💬 Send Me Feedback</h1>
     <form action="https://formspree.io/f/mnqekvvl" method="POST">
       <label for="name">Your Name:</label>
       <input type="text" name="name" required>
 
-      <label for="email">Your Email:</label>
-      <input type="email" name="email" required>
-
       <label for="message">Your Message:</label>
       <textarea name="message" rows="5" required></textarea>
 
-      <button type="submit">Send Message</button>
+      <button type="submit">Send Feedback</button>
     </form>
   </div>
-
 </body>
 </html>
