@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback | Prakasho Uzumaki</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: url('https://wallpapercave.com/wp/wp2758015.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      padding: 12px;
+      border-bottom: 2px solid #00bfff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      color: white;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00bfff;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      font-family: inherit;
+      font-size: 16px;
+      border: none;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #00bfff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #009acd;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">👤 About</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="feedback.html">💬 Feedback</a>
+  </nav>
+
+  <div class="container">
+    <h1>💬 Share Your Feedback</h1>
+    <form action="https://formspree.io/f/mnqekvvl" method="POST">
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" required>
+
+      <label for="email">Your Email:</label>
+      <input type="email" name="email" required>
+
+      <label for="message">Your Message:</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+</body>
+</html>
