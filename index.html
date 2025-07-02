@@ -68,10 +68,14 @@
 
   input, textarea {
     width: 100%;
-    box-sizing: border-box;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     font-family: inherit;
+    font-size: 16px;
+    border: none;
+    box-sizing: border-box; /* VERY important to keep it inside the box */
+    display: block;          /* ensures no weird inline offset */
+    margin: 0 auto;          /* centers if not full width */
   }
 
   button {
