@@ -13,6 +13,7 @@
       color: #fff;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     .navbar {
@@ -38,22 +39,6 @@
       color: #ffffff;
     }
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.2s ease-in-out forwards;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
     .form-wrapper {
       max-width: 500px;
       margin: 60px auto;
@@ -64,10 +49,9 @@
     }
 
     h1 {
-      text-align: center;
-      font-size: 26px;
       color: #00bfff;
-      margin-bottom: 30px;
+      font-size: 28px;
+      margin-bottom: 20px;
     }
 
     label {
@@ -120,7 +104,7 @@
 
     @media screen and (max-width: 600px) {
       .form-wrapper {
-        margin: 30px 10px;
+        margin: 40px 20px;
         padding: 20px;
       }
 
@@ -149,19 +133,14 @@
     <a href="feedback.html">💬 Feedback</a>
   </nav>
 
-  <div class="form-wrapper fade-in">
+  <div class="form-wrapper">
     <h1>💬 Send Me Feedback</h1>
-    <form action="https://formspree.io/f/mwpbzqnk" method="POST">
+    <form id="feedbackForm">
       <label for="name">Your Name:</label>
       <input type="text" name="name" required>
 
-      <label for="email">Your Email (optional):</label>
-      <input type="email" name="email">
-
       <label for="message">Your Message:</label>
       <textarea name="message" rows="5" required></textarea>
-
-      <input type="hidden" name="_redirect" value="https://powerfuldestroyer.github.io/Prakasho-Anime-Site/thankyou.html">
 
       <button type="submit">Send Feedback</button>
     </form>
@@ -170,5 +149,29 @@
   <footer>
     © 2025 Prakasho Uzumaki | Built with 💙 and Anime Vibes
   </footer>
+
+  <script>
+    const form = document.getElementById('feedbackForm');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+
+      fetch('https://formspree.io/f/mwpbzqnk', {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = 'thankyou.html';
+        } else {
+          alert('Something went wrong.');
+        }
+      }).catch(() => alert('Submission failed.'));
+    });
+  </script>
 </body>
 </html>
+mwpbzqnk
