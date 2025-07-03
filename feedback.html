@@ -110,6 +110,14 @@
       box-shadow: 0 0 15px #00bfff;
     }
 
+    footer {
+      text-align: center;
+      padding: 12px;
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
     @media screen and (max-width: 600px) {
       .form-wrapper {
         margin: 30px 10px;
@@ -147,11 +155,20 @@
       <label for="name">Your Name:</label>
       <input type="text" name="name" required>
 
+      <label for="email">Your Email (optional):</label>
+      <input type="email" name="email">
+
       <label for="message">Your Message:</label>
       <textarea name="message" rows="5" required></textarea>
+
+      <input type="hidden" name="_redirect" value="thankyou.html">
 
       <button type="submit">Send Feedback</button>
     </form>
   </div>
+
+  <footer>
+    © 2025 Prakasho Uzumaki | Built with 💙 and Anime Vibes
+  </footer>
 </body>
 </html>
