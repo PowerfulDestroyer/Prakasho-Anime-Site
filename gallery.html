@@ -78,7 +78,6 @@
     box-shadow: 0 0 20px #00bfff, 0 0 10px #00bfff inset;
   }
 
-
    h1 {
     text-align: center;
     margin: 30px auto 10px auto;
@@ -91,8 +90,36 @@
     text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
   }
 
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    text-align: center;
+    padding-top: 60px;
+  }
 
-    @media screen and (max-width: 600px) {
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 12px;
+    box-shadow: 0 0 30px #00bfff;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #00bfff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+   
+  @media screen and (max-width: 600px) {
       .navbar {
         flex-direction: column;
         padding: 10px;
@@ -137,5 +164,34 @@
     <img src="uppers.png" alt="Upper Demons">
     <img src="zenitsu.jpg" alt="Zenitsu">
   </div>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
+
+  <script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.querySelectorAll('.gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  // Optional: Close when clicking outside the image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+  </script>
+
 </body>
 </html>
