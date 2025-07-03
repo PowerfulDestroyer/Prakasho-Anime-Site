@@ -1,160 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>World of Prakasho Uzumaki</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World of Prakasho Uzumaki</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
   <style>
-  body {
-    background: url('https://wallpapercave.com/wp/wp8732572.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://wallpapercave.com/wp/wp8732572.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
 
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 12px;
-    border-bottom: 2px solid #00bfff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: rgba(0,0,0,0.8);
+      padding: 12px;
+      border-bottom: 2px solid #00bfff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-  .navbar a {
-    color: #00bfff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    transition: color 0.3s ease;
-  }
-
-  .navbar a:hover {
-    color: #ffffff;
-  }
-
-  .menu-icon {
-    display: none;
-    color: #00bfff;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 12px;
-    max-width: 900px;
-    margin: 30px auto;
-  }
-
-  h1 {
-    color: #00f7ff;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 8px #00f7ff, 0 0 12px #00f7ff;
-  }
-
-  h2, h3 {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
-  }
-
-  p, ul, li {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 5px 10px;
-    border-radius: 8px;
-  }
-
-  .anime-card {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 12px;
-    margin: 25px 0;
-    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
-    transition: transform 0.3s ease;
-  }
-
-  .anime-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0, 255, 255, 0.4);
-  }
-
-  iframe {
-    width: 100%;
-    height: 200px;
-    border-radius: 10px;
-  }
-
-  footer {
-    background: rgba(0,0,0,0.7);
-    padding: 15px;
-    text-align: center;
-    color: #ccc;
-    margin-top: 40px;
-    border-top: 1px solid #00bfff;
-  }
-
-  footer a {
-    color: #00bfff;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-
-  footer a:hover {
-    text-decoration: underline;
-  }
-
-  @media (max-width: 600px) {
     .navbar a {
-      display: none;
+      color: #00bfff;
+      margin: 8px 15px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: clamp(14px, 2vw, 18px);
     }
 
-    .menu-icon {
-      display: block;
+    .navbar a:hover {
+      color: #fff;
     }
 
-    .navbar.active a {
-      display: block;
-      margin: 10px 0;
+    .overlay {
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
     }
-  }
 
-  .fade-in {
-    opacity: 0;
-    animation: fadeIn 1.2s ease-in-out forwards;
-  }
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      color: #00f7ff;
+      background: rgba(0,0,0,0.6);
+      border-radius: 10px;
+      padding: 10px 20px;
+      text-shadow: 0 0 8px #00f7ff, 0 0 12px #00f7ff;
+      font-size: clamp(20px, 4vw, 28px);
+    }
 
-  @keyframes fadeIn {
-    from {
+    .anime-card {
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      margin: 20px 0;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,255,255,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .anime-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,255,255,0.4);
+    }
+
+    .anime-card img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .anime-card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,255,255,0.3);
+    }
+
+    blockquote {
+      background: rgba(0,0,0,0.5);
+      border-left: 4px solid #ff5555;
+      padding: 10px;
+      border-radius: 6px;
+      font-style: italic;
+      color: #a6e22e;
+    }
+
+    p, ul, li {
+      background: rgba(0,0,0,0.4);
+      padding: 5px 10px;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #ccc;
+      border-top: 1px solid rgba(255,255,255,0.2);
+      margin-top: 40px;
+    }
+
+    @media(max-width: 600px) {
+      iframe {
+        height: 180px;
+      }
+
+      .navbar {
+        flex-direction: column;
+      }
+    }
+
+    .fade-in {
       opacity: 0;
-      transform: translateY(20px);
+      animation: fadeIn 1.2s ease-in-out forwards;
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-  }
 
   </style>
 </head>
 <body>
-
   <nav class="navbar">
-    <span class="menu-icon" onclick="toggleMenu()">☰</span>
     <a href="index.html">🏠 Home</a>
     <a href="about.html">👤 About</a>
     <a href="gallery.html">🖼️ Gallery</a>
@@ -163,29 +153,61 @@
 
   <div class="overlay fade-in">
     <h1>🌟 The World of Prakasho Uzumaki 🌍</h1>
-    <span id="typed-text" style="font-size: clamp(1rem, 3vw, 1.2rem); color: #00bfff;"></span>
+    <span id="typed-text" style="font-size: 20px; color: #00bfff;"></span>
     <p>I’m a ninja, pirate, and demon slayer — in training. Welcome to my world.</p>
 
-    <!-- Anime Cards here (Naruto, One Piece, Demon Slayer) -->
+    <div class="anime-card">
+      <h2>🍥 Naruto</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBgc3B-7GtZCHTLcEb7hq6pjoZzylakqwuSw&s">
+      <p><a href="https://www.crunchyroll.com/series/GYQ4MW246/naruto-shippuden" target="_blank">Watch here</a></p>
+      <blockquote>"I'm not gonna run away, I never go back on my word! That's my nindo — my ninja way!"</blockquote>
+      <ul>
+        <li>Teaches me never to give up</li>
+        <li>Cool jutsus and epic fights</li>
+        <li>Story of friendship and pain</li>
+      </ul>
+      <iframe src="https://www.youtube.com/embed/1WLO0Owi5-A" allowfullscreen></iframe>
+    </div>
+
+    <div class="anime-card">
+      <h2>☠️ One Piece</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT924nGH-OLJUAe1zbMIQudvHAx5pMFBc38gg&s">
+      <p><a href="https://www.crunchyroll.com/series/GRMG8ZQZR/one-piece" target="_blank">Watch here</a></p>
+      <blockquote>"If you don't take risks, you can't create a future!" — Monkey D. Luffy</blockquote>
+      <ul>
+        <li>Adventure with true nakamas</li>
+        <li>Incredible world-building</li>
+        <li>Zoro is a beast</li>
+      </ul>
+      <iframe src="https://www.youtube.com/embed/l6kp780S-os" allowfullscreen></iframe>
+    </div>
+
+    <div class="anime-card">
+      <h2>🔥 Demon Slayer</h2>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlx52AOnIL8Vq7yJLUK9ZwNOLUXL9Gi9-grg&s">
+      <p><a href="https://www.crunchyroll.com/series/GY5P48XEY/demon-slayer-kimetsu-no-yaiba" target="_blank">Watch here</a></p>
+      <blockquote>"Those who regret their actions are the ones who truly have a heart." — Tanjiro</blockquote>
+      <ul>
+        <li>Emotional and powerful</li>
+        <li>Beautiful animation</li>
+        <li>Sword fights are 🔥</li>
+      </ul>
+      <iframe src="https://www.youtube.com/embed/VQGCKyvzIM4" allowfullscreen></iframe>
+    </div>
 
     <h2>💬 Feedback</h2>
-    <p>If you have any suggestions, comments, or just wanna say hi — click below!</p>
-    <p style="text-align:center; margin-top: 20px;">
+    <p>Suggestions or just wanna say hi? Click below!</p>
+    <p style="text-align:center;">
       <a href="feedback.html" style="background: rgba(0,0,0,0.6); padding: 10px 20px; border-radius: 8px; color: #00bfff; font-weight: bold;">💬 Leave Feedback</a>
     </p>
+
   </div>
 
-  <footer>
-    © 2025 Prakasho Uzumaki | Built with 💙 & Anime
-    <div>
-      <a href="#">Instagram</a>
-      <a href="#">GitHub</a>
-    </div>
-  </footer>
+  <div class="footer">© 2025 Prakasho Uzumaki | Anime & Code</div>
 
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
-    var typed = new Typed("#typed-text", {
+    new Typed("#typed-text", {
       strings: [
         "Welcome to the World of Prakasho Uzumaki",
         "Anime Lover 🌸 | Ninja 🍥 | Future Full Stack Dev 💻",
@@ -196,10 +218,6 @@
       backDelay: 1500,
       loop: true
     });
-
-    function toggleMenu() {
-      document.querySelector('.navbar').classList.toggle('active');
-    }
   </script>
 
 </body>
