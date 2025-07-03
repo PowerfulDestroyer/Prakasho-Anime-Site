@@ -280,10 +280,10 @@
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Preview">
+    <div id="lightbox-caption" style="margin-top: 20px; color: #00bfff; font-size: 18px;"></div>
     <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
     <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
   </div>
-
 
   <script>
     const lightbox = document.getElementById('lightbox');
@@ -319,6 +319,16 @@
       currentIndex = (currentIndex + step + images.length) % images.length;
       updateLightbox();
     }
+
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    function updateLightbox() {
+      const img = images[currentIndex];
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightboxCaption.textContent = img.nextElementSibling.textContent; // grabs caption-overlay text
+    }
+
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
