@@ -38,6 +38,32 @@
       color: #ffffff;
     }
 
+    .nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 40px;
+      color: #00bfff;
+      cursor: pointer;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 50%;
+      user-select: none;
+    }
+
+    .prev {
+      left: 30px;
+    }
+
+    .next {
+      right: 30px;
+    }
+
+    .nav-btn:hover {
+      background-color: rgba(0, 191, 255, 0.6);
+    }
+
+
     .fade-in {
       opacity: 0;
       animation: fadeIn 1.2s ease-in-out forwards;
@@ -200,61 +226,64 @@
   </div>
 
   <div class="gallery fade-in">
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="naruto.webp" alt="Naruto">
-      <div class="caption-overlay">Naruto Uzumaki</div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="naruto.webp" alt="Naruto">
+        <div class="caption-overlay">Naruto Uzumaki</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="luffy.jpeg" alt="Luffy">
+        <div class="caption-overlay">Monkey D. Luffy</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="tanjiro.webp" alt="Tanjiro">
+        <div class="caption-overlay">Tanjiro Kamado</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="zoro.jpg" alt="Zoro">
+        <div class="caption-overlay">Roronoa Zoro</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="nezuko.jpeg" alt="Nezuko">
+        <div class="caption-overlay">Nezuko Kamado</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="kakashi.webp" alt="Kakashi">
+        <div class="caption-overlay">Kakashi Hatake</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="uppers.png" alt="Upper Demons">
+        <div class="caption-overlay">Upper Moon Demons</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="image-container">
+        <img src="zenitsu.jpg" alt="Zenitsu">
+        <div class="caption-overlay">Zenitsu Agatsuma</div>
+      </div>
     </div>
   </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="luffy.jpeg" alt="Luffy">
-      <div class="caption-overlay">Monkey D. Luffy</div>
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="tanjiro.webp" alt="Tanjiro">
-      <div class="caption-overlay">Tanjiro Kamado</div>
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="zoro.jpg" alt="Zoro">
-      <div class="caption-overlay">Roronoa Zoro</div>
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="nezuko.jpeg" alt="Nezuko">
-      <div class="caption-overlay">Nezuko Kamado</div>
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="kakashi.webp" alt="Kakashi">
-      <div class="caption-overlay">Kakashi Hatake</div>
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="uppers.png" alt="Upper Demons">
-      <div class="caption-overlay">Upper Moon Demons</div>
-    </div>
-  </div>
-  <div class="gallery-item">
-    <div class="image-container">
-      <img src="zenitsu.jpg" alt="Zenitsu">
-      <div class="caption-overlay">Zenitsu Agatsuma</div>
-    </div>
-  </div>
-</div>
 
 
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Preview">
+    <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
+    <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
   </div>
+
 
   <script>
     const lightbox = document.getElementById('lightbox');
