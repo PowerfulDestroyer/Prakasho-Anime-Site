@@ -94,6 +94,32 @@
       box-shadow: 0 0 20px #00bfff, 0 0 10px #00bfff inset;
     }
 
+    .image-container {
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+    }
+
+    .caption-overlay {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      color: #00bfff;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+    }
+
+    .image-container:hover .caption-overlay {
+    opacity: 1;
+    }
+
+
     .caption {
       margin-top: 8px;
       font-size: 14px;
@@ -174,39 +200,56 @@
   </div>
 
   <div class="gallery fade-in">
-    <div class="gallery-item">
-      <img src="naruto.webp" alt="Naruto" tabindex="0">
-      <p class="caption">Naruto Uzumaki</p>
-    </div>
-    <div class="gallery-item">
-      <img src="luffy.jpeg" alt="Luffy" tabindex="0">
-      <p class="caption">Monkey D. Luffy</p>
-    </div>
-    <div class="gallery-item">
-      <img src="tanjiro.webp" alt="Tanjiro" tabindex="0">
-      <p class="caption">Tanjiro Kamado</p>
-    </div>
-    <div class="gallery-item">
-      <img src="zoro.jpg" alt="Zoro" tabindex="0">
-      <p class="caption">Roronoa Zoro</p>
-    </div>
-    <div class="gallery-item">
-      <img src="nezuko.jpeg" alt="Nezuko" tabindex="0">
-      <p class="caption">Nezuko Kamado</p>
-    </div>
-    <div class="gallery-item">
-      <img src="kakashi.webp" alt="Kakashi" tabindex="0">
-      <p class="caption">Kakashi Hatake</p>
-    </div>
-    <div class="gallery-item">
-      <img src="uppers.png" alt="Upper Demons" tabindex="0">
-      <p class="caption">Upper Moon Demons</p>
-    </div>
-    <div class="gallery-item">
-      <img src="zenitsu.jpg" alt="Zenitsu" tabindex="0">
-      <p class="caption">Zenitsu Agatsuma</p>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="naruto.webp" alt="Naruto">
+      <div class="caption-overlay">Naruto Uzumaki</div>
     </div>
   </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="luffy.jpeg" alt="Luffy">
+      <div class="caption-overlay">Monkey D. Luffy</div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="tanjiro.webp" alt="Tanjiro">
+      <div class="caption-overlay">Tanjiro Kamado</div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="zoro.jpg" alt="Zoro">
+      <div class="caption-overlay">Roronoa Zoro</div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="nezuko.jpeg" alt="Nezuko">
+      <div class="caption-overlay">Nezuko Kamado</div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="kakashi.webp" alt="Kakashi">
+      <div class="caption-overlay">Kakashi Hatake</div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="uppers.png" alt="Upper Demons">
+      <div class="caption-overlay">Upper Moon Demons</div>
+    </div>
+  </div>
+  <div class="gallery-item">
+    <div class="image-container">
+      <img src="zenitsu.jpg" alt="Zenitsu">
+      <div class="caption-overlay">Zenitsu Agatsuma</div>
+    </div>
+  </div>
+</div>
+
 
   <div id="lightbox" class="lightbox">
     <span class="close" onclick="closeLightbox()">&times;</span>
