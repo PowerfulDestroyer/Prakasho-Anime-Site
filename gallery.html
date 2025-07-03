@@ -54,6 +54,18 @@
       }
     }
 
+    h1 {
+      text-align: center;
+      margin: 30px auto;
+      font-size: 28px;
+      color: #00bfff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 12px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -63,63 +75,70 @@
       margin: auto;
     }
 
-   .gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border-radius: 16px;
-  }
+    .gallery-item {
+      text-align: center;
+    }
 
-  .gallery img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00bfff, 0 0 10px #00bfff inset;
-  }
+    .gallery img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      outline: none;
+    }
 
-   h1 {
-    text-align: center;
-    margin: 30px auto 10px auto;
-    font-size: 28px;
-    color: #00bfff;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 12px 20px;
-    border-radius: 10px;
-    display: inline-block;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00bfff, 0 0 10px #00bfff inset;
+    }
 
-  .lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.95);
-    text-align: center;
-    padding-top: 60px;
-  }
+    .caption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #ccc;
+    }
 
-  .lightbox img {
-    max-width: 90%;
-    max-height: 80%;
-    border-radius: 12px;
-    box-shadow: 0 0 30px #00bfff;
-  }
+    .lightbox {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.95);
+      text-align: center;
+      padding-top: 60px;
+      pointer-events: none;
+    }
 
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: #00bfff;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-   
-  @media screen and (max-width: 600px) {
+    .lightbox.show {
+      display: block;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 12px;
+      box-shadow: 0 0 30px #00bfff;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #00bfff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 600px) {
       .navbar {
         flex-direction: column;
         padding: 10px;
@@ -155,14 +174,38 @@
   </div>
 
   <div class="gallery fade-in">
-    <img src="naruto.webp" alt="Naruto">
-    <img src="luffy.jpeg" alt="Luffy">
-    <img src="tanjiro.webp" alt="Tanjiro">
-    <img src="zoro.jpg" alt="Zoro">
-    <img src="nezuko.jpeg" alt="Nezuko">
-    <img src="kakashi.webp" alt="Kakashi">
-    <img src="uppers.png" alt="Upper Demons">
-    <img src="zenitsu.jpg" alt="Zenitsu">
+    <div class="gallery-item">
+      <img src="naruto.webp" alt="Naruto" tabindex="0">
+      <p class="caption">Naruto Uzumaki</p>
+    </div>
+    <div class="gallery-item">
+      <img src="luffy.jpeg" alt="Luffy" tabindex="0">
+      <p class="caption">Monkey D. Luffy</p>
+    </div>
+    <div class="gallery-item">
+      <img src="tanjiro.webp" alt="Tanjiro" tabindex="0">
+      <p class="caption">Tanjiro Kamado</p>
+    </div>
+    <div class="gallery-item">
+      <img src="zoro.jpg" alt="Zoro" tabindex="0">
+      <p class="caption">Roronoa Zoro</p>
+    </div>
+    <div class="gallery-item">
+      <img src="nezuko.jpeg" alt="Nezuko" tabindex="0">
+      <p class="caption">Nezuko Kamado</p>
+    </div>
+    <div class="gallery-item">
+      <img src="kakashi.webp" alt="Kakashi" tabindex="0">
+      <p class="caption">Kakashi Hatake</p>
+    </div>
+    <div class="gallery-item">
+      <img src="uppers.png" alt="Upper Demons" tabindex="0">
+      <p class="caption">Upper Moon Demons</p>
+    </div>
+    <div class="gallery-item">
+      <img src="zenitsu.jpg" alt="Zenitsu" tabindex="0">
+      <p class="caption">Zenitsu Agatsuma</p>
+    </div>
   </div>
 
   <div id="lightbox" class="lightbox">
@@ -171,27 +214,34 @@
   </div>
 
   <script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.style.display = 'block';
-      lightboxImg.src = img.src;
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.classList.add('show');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+
+      // Optional: open on Enter key
+      img.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          lightbox.classList.add('show');
+          lightboxImg.src = img.src;
+        }
+      });
     });
-  });
 
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-  }
-
-  // Optional: Close when clicking outside the image
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
+    function closeLightbox() {
+      lightbox.classList.remove('show');
     }
-  });
-  </script>
 
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
