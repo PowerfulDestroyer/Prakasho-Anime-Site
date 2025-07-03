@@ -4,133 +4,136 @@
   <meta charset="UTF-8">
   <title>About Prakasho Uzumaki</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet">
   <style>
-  body {
-    background: url('naruto.webp') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+    body {
+      background: url('naruto.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 30px;
-    margin: 20px;
-    border-radius: 12px;
-    max-width: 800px;
-    margin: 40px auto;
-  }
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      border-bottom: 2px solid #00bfff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-  h1 {
-    color: #00bfff; /* new sky blue */
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+    .navbar a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
 
-  p {
-    font-size: 18px;
-    line-height: 1.6;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 12px;
-    border-radius: 8px;
-  }
+    .navbar a:hover {
+      color: #fff;
+    }
 
-  a {
-    color: #00bfff;
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    font-weight: bold;
-  }
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.75);
+      padding: 30px;
+      margin: 60px auto 40px auto;
+      border-radius: 12px;
+      max-width: 800px;
+    }
 
-  a:hover {
-    text-decoration: underline;
-  }
+    img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px auto;
+      border: 3px solid #00bfff;
+      transition: transform 0.4s ease;
+    }
 
-  img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 20px auto;
-    border: 3px solid #00bfff;
-  }
+    img:hover {
+      transform: scale(1.05);
+    }
 
-  .navbar {
-    background-color: rgba(0, 0, 0, 0.8);
-    text-align: center;
-    padding: 12px;
-    border-bottom: 2px solid #00bfff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+    h1 {
+      color: #00bfff;
+      font-size: clamp(24px, 5vw, 32px);
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
+    }
 
-  .navbar a {
-    color: #00bfff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-    font-size: 18px;
-    transition: color 0.3s ease;
-  }
+    p {
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.7;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
 
-  .navbar a:hover {
-    color: #ffffff;
-  }
+    a {
+      color: #00bfff;
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
 
+    a:hover {
+      text-decoration: underline;
+    }
 
-  @media screen and (max-width: 600px) {
-  body {
-    padding: 10px;
-    font-size: 16px;
-  }
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
 
-  h1 {
-    font-size: 20px;
-  }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-  p {
-    font-size: 15px;
-  }
+    footer {
+      text-align: center;
+      padding: 10px;
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 40px;
+    }
 
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
+    @media screen and (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        padding: 10px;
+      }
 
-  .navbar a {
-    display: block;
-    margin: 8px 0;
-    font-size: 16px;
-  }
+      .navbar a {
+        display: block;
+        margin: 8px 0;
+        font-size: 16px;
+      }
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 1.2s ease-in-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-    
-</style>
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
 
 </head>
 <body>
@@ -142,24 +145,29 @@
   </nav>
 
   <div class="overlay fade-in">
-    <img src="naruto.webp" alt="Prakasho Avatar" style="width: 120px; height: 120px; border-radius: 50%;">
+    <img src="naruto.webp" alt="Prakasho Avatar">
     <h1>👤 Prakasho Uzumaki</h1>
 
     <p>
-      Hey there! I'm Prakasho Uzumaki — a 11th-grade anime fan and future full-stack ninja. I spend my time learning code, watching Naruto, One Piece, and Demon Slayer, and building cool things like this site! My dream is to become the Hokage of the digital world 💻🔥
+      Hey there! I'm Prakasho Uzumaki — an 11th-grade anime fan and future full-stack ninja. I spend my time learning code, watching Naruto, One Piece, and Demon Slayer, and building cool things like this site! My dream is to become the Hokage of the digital world 💻🔥
     </p>
 
     <p>
       I believe in chasing dreams, helping others, and working hard no matter what. I'm just getting started — and you're welcome to follow along on my journey!
     </p>
 
-    <p style="text-align:center;">
-      <em>"I'm not gonna run away. I never go back on my word! That's my ninja way!"</em>
+    <p style="text-align:center; font-style: italic;">
+      "I'm not gonna run away. I never go back on my word! That's my ninja way!"
     </p>
 
     <p style="text-align:center;">
       <a href="index.html">← Back to Home</a>
     </p>
   </div>
+
+  <footer>
+    © 2025 Prakasho Uzumaki | Built with 💙 and Anime Vibes
+  </footer>
+
 </body>
 </html>
